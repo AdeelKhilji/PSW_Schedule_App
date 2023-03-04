@@ -19,7 +19,7 @@ namespace PSW_Schedule_API.Services
         {
             try
             {
-                return await _dbContext.Employees.ToListAsync();
+                return await _dbContext.Employees.Include(s => s.Schedules).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -101,7 +101,7 @@ namespace PSW_Schedule_API.Services
         {
             try
             {
-                return await _dbContext.Schedules.ToListAsync();
+                return await _dbContext.Schedules.Include(e => e.Employee).ToListAsync();
             }
             catch (Exception ex)
             {
