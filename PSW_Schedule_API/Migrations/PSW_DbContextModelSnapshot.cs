@@ -24,11 +24,11 @@ namespace PSW_Schedule_API.Migrations
 
             modelBuilder.Entity("PSW_Schedule_API.Models.Employee", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -40,35 +40,35 @@ namespace PSW_Schedule_API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = 1L,
                             Name = "Samantha"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = 2L,
                             Name = "Jin Ling"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = 3L,
                             Name = "Martha"
                         });
                 });
 
             modelBuilder.Entity("PSW_Schedule_API.Models.Schedule", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("ClientName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("EmployeeId")
+                    b.Property<long?>("EmployeeId")
                         .IsRequired()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
@@ -79,27 +79,27 @@ namespace PSW_Schedule_API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = 1L,
                             ClientName = "XinGao",
-                            EmployeeId = 1
+                            EmployeeId = 1L
                         },
                         new
                         {
-                            Id = 2,
+                            Id = 2L,
                             ClientName = "ChinLee",
-                            EmployeeId = 1
+                            EmployeeId = 1L
                         },
                         new
                         {
-                            Id = 3,
+                            Id = 3L,
                             ClientName = "Mathew",
-                            EmployeeId = 2
+                            EmployeeId = 2L
                         },
                         new
                         {
-                            Id = 4,
+                            Id = 4L,
                             ClientName = "Zamana",
-                            EmployeeId = 3
+                            EmployeeId = 3L
                         });
                 });
 

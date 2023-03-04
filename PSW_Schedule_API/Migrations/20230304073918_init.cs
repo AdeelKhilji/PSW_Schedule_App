@@ -16,7 +16,7 @@ namespace PSW_Schedule_API.Migrations
                 name: "Employees",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -29,10 +29,10 @@ namespace PSW_Schedule_API.Migrations
                 name: "Schedules",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ClientName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmployeeId = table.Column<int>(type: "int", nullable: false)
+                    EmployeeId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,9 +50,9 @@ namespace PSW_Schedule_API.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Samantha" },
-                    { 2, "Jin Ling" },
-                    { 3, "Martha" }
+                    { 1L, "Samantha" },
+                    { 2L, "Jin Ling" },
+                    { 3L, "Martha" }
                 });
 
             migrationBuilder.InsertData(
@@ -60,10 +60,10 @@ namespace PSW_Schedule_API.Migrations
                 columns: new[] { "Id", "ClientName", "EmployeeId" },
                 values: new object[,]
                 {
-                    { 1, "XinGao", 1 },
-                    { 2, "ChinLee", 1 },
-                    { 3, "Mathew", 2 },
-                    { 4, "Zamana", 3 }
+                    { 1L, "XinGao", 1L },
+                    { 2L, "ChinLee", 1L },
+                    { 3L, "Mathew", 2L },
+                    { 4L, "Zamana", 3L }
                 });
 
             migrationBuilder.CreateIndex(

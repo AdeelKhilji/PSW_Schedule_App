@@ -35,7 +35,7 @@ namespace PSW_Schedule_API.Controllers
         }
 
         [HttpGet("id")]
-        public async Task<IActionResult> GetSchedule(int id)
+        public async Task<IActionResult> GetSchedule(long id)
         {
             Schedule schedule = await _PSWservices.GetScheduleAsync(id);
             if (schedule == null)
@@ -58,7 +58,7 @@ namespace PSW_Schedule_API.Controllers
         }
 
         [HttpPut("id")]
-        public async Task<ActionResult<Schedule>> UpdateSchedule(int id, Schedule schedule)
+        public async Task<ActionResult<Schedule>> UpdateSchedule(long id, Schedule schedule)
         {
             if (id != schedule.Id)
             {
@@ -74,7 +74,7 @@ namespace PSW_Schedule_API.Controllers
         }
 
         [HttpDelete("id")]
-        public async Task<IActionResult> DeleteSchedule(int id)
+        public async Task<IActionResult> DeleteSchedule(long id)
         {
             var schedule = await _PSWservices.GetScheduleAsync(id);
             (bool status, string message) = await _PSWservices.DeleteScheduleAsync(schedule);

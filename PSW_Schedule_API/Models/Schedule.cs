@@ -6,10 +6,10 @@ namespace PSW_Schedule_API.Models
     public class Schedule
     {
         [Key]
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string? ClientName { get; set; }
         
-        public int? EmployeeId { get; set; }
+        public long? EmployeeId { get; set; }
         public Employee Employee { get; set; }
     }
 }

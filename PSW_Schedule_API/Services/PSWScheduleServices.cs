@@ -27,7 +27,7 @@ namespace PSW_Schedule_API.Services
             }
         }
 
-        public async Task<Employee> GetEmployeeAsync(int id, bool includeSchedules)
+        public async Task<Employee> GetEmployeeAsync(long id, bool includeSchedules)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace PSW_Schedule_API.Services
             }
         }
 
-        public async Task<Schedule> GetScheduleAsync(int id)
+        public async Task<Schedule> GetScheduleAsync(long id)
         {
             try
             {
