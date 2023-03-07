@@ -1,12 +1,23 @@
-<div class="employeeItem">
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>NAME</th>
-    </tr>
-    <tr *ngFor="let employee of employees">
-      <th>{{employee.id}}</th>
-      <th>{{employee.name}}</th>
-    </tr>
-  </table>
-</div>
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="ms-2 me-auto" *ngFor="let employee of employees">
+      <div class="fw-bold">
+        <h5>EMPLOYEE NAME:</h5>
+        <p><strong>{{employee.name}}</strong></p>
+      </div>
+      <br/>
+      <h5>CLIENT NAME:</h5>
+      <div class="fw-bold" *ngFor="let schedule of employee.schedules">
+        <div>
+          <p><strong>{{schedule.clientName}}</strong>&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger">x</button></p>
+        </div>
+      </div>
+      <br/>
+      <div>
+        <button type="button" class="btn btn-primary">ADD SCHEDULE</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <br/>
+      <br/>
+    </div>
+  </li>
+</ul>
