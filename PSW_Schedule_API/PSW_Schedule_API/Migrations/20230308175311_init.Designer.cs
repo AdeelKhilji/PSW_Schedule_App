@@ -12,7 +12,7 @@ using PSW_Schedule_API.DbContexts;
 namespace PSW_Schedule_API.Migrations
 {
     [DbContext(typeof(PSW_DbContext))]
-    [Migration("20230304110906_init")]
+    [Migration("20230308175311_init")]
     partial class init
     {
         /// <inheritdoc />

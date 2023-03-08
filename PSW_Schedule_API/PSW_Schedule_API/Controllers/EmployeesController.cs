@@ -34,7 +34,8 @@ namespace PSW_Schedule_API.Controllers
             return StatusCode(StatusCodes.Status200OK, employees);
         }
 
-        [HttpGet("id")]
+        [HttpGet]
+        [Route("{id:int}")]
         public async Task<IActionResult> GetEmployee(long id, bool includeSchedule)
         {
             Employee employee = await _PSWservices.GetEmployeeAsync(id, includeSchedule);
@@ -57,7 +58,8 @@ namespace PSW_Schedule_API.Controllers
             return CreatedAtAction("GetEmployee", new {id = employee.Id},employee);
         }
 
-        [HttpPut("id")]
+        [HttpPut]
+        [Route("{id:int}")]
         public async Task<ActionResult<Employee>> UpdateEmployee(long id, Employee employee)
         {
             if(id != employee.Id)
@@ -73,7 +75,8 @@ namespace PSW_Schedule_API.Controllers
             return NoContent();
         }
 
-        [HttpDelete("id")]
+        [HttpDelete]
+        [Route("{id:int}")]
         public async Task<IActionResult> DeleteEmployee(long id)
         {
             var employee = await _PSWservices.GetEmployeeAsync(id, false);

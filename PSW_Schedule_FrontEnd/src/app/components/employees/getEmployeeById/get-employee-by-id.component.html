@@ -1,0 +1,16 @@
+<!-- <p>get-employee-by-id works!</p> -->
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">
+        <h5>EMPLOYEE NAME:</h5>
+        <p>{{employeeDetails.id}}</p>
+        <p>{{employeeDetails.name}}</p>
+        <!-- <p><a [routerLink]="['/employees','edit',employeeDetails.id]">EDIT</a></p> -->
+        <div *ngFor="let schedule of employeeDetails.schedules">
+          <p>{{schedule.clientName}}</p>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

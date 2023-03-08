@@ -1,0 +1,14 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="ms-2 me-auto" *ngFor="let employee of employees">
+      <div class="fw-bold">
+        <h5>EMPLOYEE NAME:</h5>
+        <p><strong>{{employee.name}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-primary" [routerLink]="['/employees',employee.id]">DETAILS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-primary" [routerLink]="['/employees','edit',employee.id]">EDIT</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-danger" [routerLink]="['/employees',employee.id]" (click)="deleteEmployee(employee.id)">DELETE</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <br/>
+    </div>
+  </li>
+</ul>
